@@ -4,6 +4,7 @@ import robotsTxt from "astro-robots-txt";
 import sitemap from "@astrojs/sitemap";
 import icon from "astro-icon";
 import metaTags from "astro-meta-tags";
+import vercel from '@astrojs/vercel/serverless';
 
 // https://astro.build/config
 export default defineConfig({
@@ -32,6 +33,8 @@ export default defineConfig({
     }]
   }), sitemap(), icon(), metaTags()],
   output: 'server',
+  adapter: vercel(),
+
   experimental: {
     clientPrerender: true
   }
